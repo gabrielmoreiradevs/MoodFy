@@ -38,15 +38,4 @@ Este projeto foi construído utilizando uma stack moderna e robusta, focada em p
   - `java-jwt`: Para a criação e validação de tokens JWT.
 - **Documentação**: `springdoc-openapi` (Swagger UI)
 
-## 🚀 Como Executar o Projeto
-
-Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
-
-### **Pré-requisitos**
-
-- **Java 17** ou superior
-- **Maven 3.8** ou superior
-- **PostgreSQL 12** ou superior (pode ser executado localmente ou via Docker)
-- Uma IDE de sua preferência (IntelliJ, VS Code, Eclipse)
-
 ### Desenvolvido com ❤️ por Gabriel Moreira
