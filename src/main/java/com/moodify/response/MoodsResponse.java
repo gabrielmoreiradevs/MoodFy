@@ -1,4 +1,4 @@
-package com.moodify.Controller.response;
+package com.moodify.response;
 
 import lombok.Builder;
 

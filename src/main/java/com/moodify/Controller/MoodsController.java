@@ -1,8 +1,8 @@
 package com.moodify.Controller;
 
-import com.moodify.Controller.Mapper.MoodsMapper;
-import com.moodify.Controller.request.MoodsRequest;
-import com.moodify.Controller.response.MoodsResponse;
+import com.moodify.Mapper.MoodsMapper;
+import com.moodify.request.MoodsRequest;
+import com.moodify.response.MoodsResponse;
 import com.moodify.Model.Moods;
 import com.moodify.Service.MoodsService;
 import lombok.RequiredArgsConstructor;

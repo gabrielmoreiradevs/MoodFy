@@ -1,7 +1,7 @@
-package com.moodify.Controller.Mapper;
+package com.moodify.Mapper;
 
-import com.moodify.Controller.request.MoodsRequest;
-import com.moodify.Controller.response.MoodsResponse;
+import com.moodify.request.MoodsRequest;
+import com.moodify.response.MoodsResponse;
 import com.moodify.Model.Moods;
 import lombok.experimental.UtilityClass;
 
