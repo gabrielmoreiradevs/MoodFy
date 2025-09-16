@@ -3,7 +3,7 @@
 [![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://www.java.com)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-blue.svg)](https://www.postgresql.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/GitHub-GPL--3.0-informational)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 API RESTful para o **Moodify**, uma plataforma inovadora para catalogar e recomendar conteúdos com base no humor do usuário. Em vez de focar em um único tipo de mídia, o Moodify permite que os usuários registrem músicas, vídeos, livros e artigos, associando cada um a um estado de humor.
 
