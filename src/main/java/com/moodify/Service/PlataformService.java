@@ -34,4 +34,8 @@ public class PlataformService {
     public void deletePlataform(Long id) {
         repository.deleteById(id);
     }
+
+    public Plataform getPlataformEntityById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }

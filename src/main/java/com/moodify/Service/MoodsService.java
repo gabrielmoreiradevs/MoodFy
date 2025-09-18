@@ -34,4 +34,9 @@ public class MoodsService {
         moodsRepository.deleteById(id);
     }
 
+    public Moods buscarMoodEntityPorId(Long id) {
+        return moodsRepository.findById(id).orElse(null);
+    }
+
+
 }
