@@ -1,0 +1,1 @@
+ALTER TABLE tb_plataform ALTER COLUMN name DROP NOT NULL;
