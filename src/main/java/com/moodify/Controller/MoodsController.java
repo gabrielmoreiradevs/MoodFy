@@ -5,6 +5,7 @@ import com.moodify.request.MoodsRequest;
 import com.moodify.response.MoodsResponse;
 import com.moodify.Model.Moods;
 import com.moodify.Service.MoodsService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class MoodsController {
     }
 
     @PostMapping
-    public ResponseEntity<MoodsResponse> adicionarUmNovoMood(@RequestBody MoodsRequest moods){
+    public ResponseEntity<MoodsResponse> adicionarUmNovoMood(@Valid @RequestBody MoodsRequest moods){
         Moods mood =  MoodsMapper.toMoods(moods);
         Moods save = moodsService.addMood(mood);
         return ResponseEntity.status(HttpStatus.CREATED).body(MoodsMapper.toMoodsResponse(save));

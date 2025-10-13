@@ -2,6 +2,7 @@ package com.moodify.Controller;
 
 import com.moodify.Mapper.PlataformMapper;
 import com.moodify.Model.Plataform;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import com.moodify.Service.PlataformService;
 import com.moodify.request.PlataformRequest;
@@ -38,7 +39,7 @@ public class PlataformController {
     }
 
     @PostMapping
-    public ResponseEntity<PlataformResponse> savePlataform(@RequestBody PlataformRequest plataformRequest) {
+    public ResponseEntity<PlataformResponse> savePlataform(@Valid @RequestBody PlataformRequest plataformRequest) {
         Plataform plataformEntity = PlataformMapper.toPlataform(plataformRequest);
         Plataform saved = service.savePlataform(plataformEntity);
 

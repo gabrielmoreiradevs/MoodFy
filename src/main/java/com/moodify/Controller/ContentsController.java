@@ -5,6 +5,7 @@ import com.moodify.Model.Contents;
 import com.moodify.Service.ContentsService;
 import com.moodify.request.ContentsRequest;
 import com.moodify.response.ContentsResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class ContentsController {
     private final ContentsService contentsService;
 
     @PostMapping
-    public ResponseEntity<ContentsResponse> save(@RequestBody ContentsRequest contentsRequest) {
+    public ResponseEntity<ContentsResponse> save(@Valid @RequestBody ContentsRequest contentsRequest) {
         Contents saved = contentsService.save(ContentsMapper.toContents(contentsRequest));
         return ResponseEntity.status(HttpStatus.CREATED).body(ContentsMapper.toContentsResponse(saved));
     }
@@ -45,7 +46,7 @@ public class ContentsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ContentsResponse> update(@RequestBody ContentsRequest contentsRequest, @PathVariable Long id) {
+    public ResponseEntity<ContentsResponse> update(@Valid @RequestBody ContentsRequest contentsRequest, @PathVariable Long id) {
         return contentsService.update(ContentsMapper.toContents(contentsRequest),id)
                 .map(contents -> ResponseEntity.ok(ContentsMapper.toContentsResponse(contents)))
                 .orElse(ResponseEntity.notFound().build());

@@ -1,4 +1,6 @@
 package com.moodify.request;
 
-public record MoodsRequest(String name) {
+import jakarta.validation.constraints.NotEmpty;
+
+public record MoodsRequest(@NotEmpty(message = "Nome do Humor Obrigatorio") String name) {
 }

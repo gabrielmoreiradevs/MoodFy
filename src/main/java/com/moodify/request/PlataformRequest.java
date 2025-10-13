@@ -1,4 +1,6 @@
 package com.moodify.request;
 
-public record PlataformRequest(String name) {
+import jakarta.validation.constraints.NotEmpty;
+
+public record PlataformRequest(@NotEmpty(message = "Nome da Plataforma Obrigatoria!") String name) {
 }
