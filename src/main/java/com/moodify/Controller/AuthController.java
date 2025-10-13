@@ -1,10 +1,12 @@
 package com.moodify.Controller;
 
+import com.moodify.Config.TokenService;
 import com.moodify.Mapper.UserMapper;
 import com.moodify.Model.User;
 import com.moodify.Service.UserService;
 import com.moodify.request.LoginRequest;
 import com.moodify.request.UserRequest;
+import com.moodify.response.LoginResponse;
 import com.moodify.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,7 @@ public class AuthController {
 
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
+    private final TokenService tokenService;
 
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@RequestBody UserRequest request){
@@ -31,12 +34,13 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest request){
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request){
         UsernamePasswordAuthenticationToken userAndPass = new UsernamePasswordAuthenticationToken(request.email(), request.password());
         Authentication authentication = authenticationManager.authenticate(userAndPass);
 
         User user = (User) authentication.getPrincipal();
+        String token = tokenService.generateToken(user);
 
-
+        return ResponseEntity.ok(new LoginResponse(token));
     }
 }
